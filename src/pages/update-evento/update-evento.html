@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      ActualizarEvento
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+     <ion-item>
+        <ion-label floating>Titulo Evento:</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="model.tituloEvento"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Mascota :</ion-label>
+         <ion-input type="text" value="" [(ngModel)]="model.idMascota"></ion-input>
+       </ion-item>
+       <ion-item>
+          <ion-label floating>Descripcion :</ion-label>
+          <ion-input type="text" value="" [(ngModel)]="model.descripcionEvento"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Hora :</ion-label>
+         <ion-input type="text" value="" [(ngModel)]="model.horaEvento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Fecha:</ion-label>
+            <ion-textarea   type="text" row="10" [(ngModel)]="model.fechaEvento"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <button type="button" (click)="updateMessage()" ion-button full >Actulizar</button>
+        
+      </ion-item>
+
+</ion-list>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      detalle Evento
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card-content>
+    <h3>Titulo: {{model.tituloEvento}}</h3>
+    <p>Mascota: {{model.idMascota}}</p>
+    <p>descripcion:{{model.descripcionEvento}}</p>
+    <p>hora: {{model.horaEvento}}</p>
+    <p>fecha: {{model.fechaEvento}}</p>
+  </ion-card-content>
+  <ion-item>
+      <button type="button" (click)=" gohome()" ion-button full >Aceptar</button>
+  </ion-item>
+</ion-content>

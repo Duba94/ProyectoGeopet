@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Actualizar Mascota
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+     <ion-item>
+        <ion-label floating>Nombre:</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="model.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Raza :</ion-label>
+         <ion-input type="text" value="" [(ngModel)]="model.raza"></ion-input>
+       </ion-item>
+       <ion-item>
+          <ion-label floating>estatura :</ion-label>
+          <ion-input type="text" value="" [(ngModel)]="model.estatura"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Peso :</ion-label>
+         <ion-input type="text" value="" [(ngModel)]="model.peso"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Edad:</ion-label>
+            <ion-textarea   type="text" row="10" [(ngModel)]="model.edad"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <button type="button" (click)="updateMascota()" ion-button full >Actulizar</button>
+
+      </ion-item>
+
+</ion-list>
+</ion-content>

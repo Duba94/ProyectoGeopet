@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Crear Evento
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  
+      <ion-item>
+        <ion-label floating>numero celular del localizador :</ion-label>
+        <ion-textarea type="text" row="10" [(ngModel)]="model.numLocal"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Contraseña del dispocitivo</ion-label>
+          <ion-input [(ngModel)]="model.password" type="password" name="password" required minlength="6"></ion-input>
+      </ion-item>
+      <ion-item>
+          <button type="button" (click)="addMessage()" ion-button full >actualizar</button>
+      </ion-item>
+
+</ion-list>
+</ion-content>

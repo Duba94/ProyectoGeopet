@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        inicio de sesion
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <form #signInForm="ngForm" (submit)="signIn()">
+          <ion-list>
+              <ion-item>
+                  <ion-label stacked>Correo electrónico</ion-label>
+                  <ion-input [(ngModel)]="userModel.email" type="email" autocorrect="off" autocapitalize="none" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                      required></ion-input>
+              </ion-item>
+  
+              <ion-item>
+                  <ion-label stacked>Contraseña</ion-label>
+                  <ion-input [(ngModel)]="userModel.password" type="password" name="password" required minlength="6"></ion-input>
+              </ion-item>
+  
+              <div padding-left padding-right padding-top>
+                  <button ion-button [disabled]="!signInForm.form.valid" block>Entrar</button>
+              </div>
+  
+              <div padding-left padding-right>
+                  <p>&iquest;No tiene Cuenta de Usuario? <a (click)="goRegistro()">Regístrese</a>
+              </div>
+          </ion-list>
+    </form>
+  
+    o inicia sesion con facebook
+  
+  
+  <div *ngIf="isLoggedIn == true && user">
+  
+  
+  
+  <h2>Hi, {{user.name}} ({{user.email}})</h2>
+  
+  
+  
+        Gender: {{user.gender}}
+  
+        <img src="{{user.picture.data.url}}" width="100" alt="{{user.name}}" />
+  
+        <button ion-button icon-right (click)="logoutFromFacebook()">
+          Logout from
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+  </div>
+  
+  
+      <div>
+          <button ion-button icon-right (click)="signInWithFacebook()">
+            Login with
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+      </div>
+      <div>
+      Si no tienes facebbok, puedes istalarlo desdes la google play
+     </div>
+  </ion-content>
+  

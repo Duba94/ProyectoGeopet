@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+    GeoPet
+    </ion-title>
+    <ion-buttons end>
+     <button ion-button icon-only (click)="signOut()">
+       <ion-icon name="log-out"></ion-icon>
+       Cerrar Sesion
+     </button>
+   </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Deslice a la izquierda para opciones
+    </ion-card-header>
+  </ion-card>
+  <ion-list>
+    <ion-item-sliding *ngFor="let message of messages">
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="https://placeimg.com/100/100/animals">
+       </ion-avatar>
+        <h3>nombre: {{message.tituloEvento}}</h3>
+        <p>Mascota: {{message.idMascota}}</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteMessage(message.$key)">
+          <ion-icon name="ios-trash"></ion-icon>
+          delete
+        </button>
+        <button ion-button color="success" (click)="goedit(message)">
+            <ion-icon name="ios-create"></ion-icon>
+            edit
+        </button>
+        <button ion-button color="danger" (click)="godetail(message)">
+            <ion-icon name="ios-detail"></ion-icon>
+            detalle
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-item>
+      <button type="button" (click)=" goCreate()" ion-button full >Crear Evento</button>
+  </ion-item>
+
+</ion-content>

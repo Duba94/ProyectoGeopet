@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Crear Evento
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+    <ion-item>
+      <ion-label floating>Titulo Evento:</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="model.tituloEvento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>nombre Mascota:</ion-label>
+        <ion-textarea   type="text" row="10" [(ngModel)]="model.idMascota"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>descripcion Evento:</ion-label>
+        <ion-textarea   type="text" row="10" [(ngModel)]="model.descripcionEvento"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Hora Evento:</ion-label>
+        <ion-textarea   type="text" row="10" [(ngModel)]="model.horaEvento"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Fecha Evento:</ion-label>
+        <ion-textarea   type="text" row="10" [(ngModel)]="model.fechaEvento"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <button type="button" (click)="addMessage()" ion-button full >Crear Evento</button>
+        
+      </ion-item>
+
+</ion-list>
+</ion-content>

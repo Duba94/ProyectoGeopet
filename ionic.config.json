@@ -1,0 +1,7 @@
+{
+  "name": "AppGeopetFire",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1041351752524",
+    "firebase_url": "https://geopetapp.firebaseio.com",
+    "project_id": "geopetapp",
+    "storage_bucket": "geopetapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041351752524:android:8221051e241badee",
+        "android_client_info": {
+          "package_name": "com.unicauca.geopet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041351752524-m7jdru7ssp62mqhpqou97lrm86a1llpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpLU7_8Vx0mCME6dacgCVRed5xUxB7Ulw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041351752524-m7jdru7ssp62mqhpqou97lrm86a1llpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

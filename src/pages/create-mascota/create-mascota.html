@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      registrar mascota
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+    <ion-item>
+      <ion-label floating>Nombre Mascota:</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="mascotaModel.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Raza Mascota:</ion-label>
+        <ion-textarea   type="text" row="10" [(ngModel)]="mascotaModel.raza"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>estatura:</ion-label>
+        <ion-textarea   type="text" row="10" [(ngModel)]="mascotaModel.estatura"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Peso:</ion-label>
+        <ion-textarea   type="text" row="10" [(ngModel)]="mascotaModel.peso"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Edad:</ion-label>
+        <ion-textarea   type="text" row="10" [(ngModel)]="mascotaModel.edad"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <button type="button" (click)="addMascota()" ion-button full >Agregar Mascota</button>
+      </ion-item>
+
+</ion-list>
+</ion-content>

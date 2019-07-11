@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      detalle Mascota
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card-content>
+    <ion-avatar item-left>
+      <img src="https://placeimg.com/100/100/animals">
+   </ion-avatar>
+    <h3>Nombre: {{model.nombre}}</h3>
+    <p>Raza: {{model.raza}}</p>
+    <p>Estatura: {{model.estatura}}</p>
+    <p>Peso: {{model.peso}}</p>
+    <p>Edad: {{model.edad}}</p>
+  </ion-card-content>
+  <ion-row no-padding>
+    <ion-col>
+      <button ion-button clear small color="primary" (click)="localizar()">
+        Localizar
+        <ion-icon name="locate"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col text-right>
+      <button ion-button clear small color="danger" (click)="configurar()" icon-left>
+        Configurar
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>
