@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 import * as firebase from 'firebase/app';
 import { AngularFireModule } from 'angularfire2';
@@ -72,6 +73,7 @@ const firebaseConfig  = {
     SplashScreen,
     EventoServiceProvider,
     Facebook ,
+    GoogleMaps,
     AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
 

@@ -1,56 +1,95 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component} from '@angular/core';
 import { NavController } from 'ionic-angular';
-
-declare var google;
+import {
+  GoogleMaps,
+  GoogleMap,
+  GoogleMapsEvent,
+  GoogleMapOptions,
+} from '@ionic-native/google-maps';
 
 @Component({
   selector: 'page-mostrar-maps',
   templateUrl: 'mostrar-maps.html',
 })
 export class MostrarMapsPage {
-  @ViewChild('map') mapElement: ElementRef;
-  map: any;
-
-  constructor(public navCtrl: NavController) {
+  
+  map: GoogleMap;
+  constructor(private navCtrl: NavController, 
+              private googleMaps: GoogleMaps
+  ){}
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CreateMascotaPage');
+    this.loadMap();
   }
-   ionViewDidLoad(){
-     this.loadMap();
-   }
+  loadMap(){
 
-   loadMap(){
-     let latLng = new google.maps.LatLng(2.4463368,-76.6227306);
+    let mapOptions: GoogleMapOptions = {
+      camera: {
+        target: {
+          lat: 43.0741904, // default location
+          lng: -89.3809802 // default location
+        },
+        zoom: 18,
+        tilt: 30
+      }
+    };
 
-     let mapOptions = {
-       center: latLng,
-       zoom: 15,
-       mapTypeId: google.maps.MapTypeId.ROADMAP
-     }
-     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-     this.addMarker();
-   }
-   addMarker(){
+    this.map = this.googleMaps.create('map_canvas', mapOptions);
 
-  let marker = new google.maps.Marker({
-    map: this.map,
-    animation: google.maps.Animation.DROP,
-    position: this.map.getCenter()
-  });
-
-  let content = "<h4>Information!</h4>";
-
-  this.addInfoWindow(marker, content);
+    // Wait the MAP_READY before using any methods.
+    this.map.one(GoogleMapsEvent.MAP_READY)
+    .then(() => {
+      // Now you can use all methods safely.
+      this.getPosition();
+      this.addMarker();
+    })
+    .catch(error =>{
+      console.log(error);
+    });
 
   }
-  addInfoWindow(marker, content){
 
-  let infoWindow = new google.maps.InfoWindow({
-    content: content
-  });
+  getPosition(): void{
+    this.map.getMyLocation()
+    .then(response => {
+      this.map.moveCamera({
+        target: response.latLng
+      });
+      this.map.addMarker({
+        title: 'My Position',
+        icon: 'blue',
+        animation: 'DROP',
+        position: response.latLng
+      });
+    })
+    .catch(error =>{
+      console.log(error);
+    });
+  }
+  
+  addMarker(){
+    /*
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: this.map.getMyLocation
+    });
 
-  google.maps.event.addListener(marker, 'click', () => {
-    infoWindow.open(this.map, marker);
-  });
+    let content = "<h4>Information!</h4>";
 
-}
+    this.addInfoWindow(marker, content);
+
+    }
+    addInfoWindow(marker, content){
+
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
+    */
+  }
 
 }
